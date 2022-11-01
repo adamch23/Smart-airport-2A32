@@ -1,0 +1,104 @@
+#include "piste.h"
+#include <QSqlQuery>
+#include<QtDebug>
+#include<QSqlQueryModel>
+#include<QObject>
+#include<QTableView>
+#include <QSqlTableModel>
+Piste::Piste()
+{
+    reference=" ";
+    numero=0;
+    etat=0;
+    larg=0;
+    longeur=0;
+
+
+}
+
+Piste::Piste(QString reference,int numero,int etat,float larg,float longeur)
+{
+    this->reference=reference;
+    this->numero=numero;
+    this->etat=etat;
+    this->larg=larg;
+    this->longeur=longeur;
+
+}
+
+
+
+QString Piste::getRef(){return reference;}
+int Piste::getNum(){return numero;}
+int Piste::getEtat(){return etat;}
+float Piste::getLarg(){return larg;}
+float Piste::getLong(){return longeur;}
+
+void Piste::setRef(QString){this->reference=reference;}
+void Piste::setNum(int numero){this->numero=numero;}
+void Piste::setEtat(int etat){this->etat=etat;}
+void Piste::setLarg(float larg){this->larg=larg;}
+void Piste::setLong(float longeur){this->longeur=longeur;}
+
+
+
+bool Piste::ajouter()
+{
+    QSqlQuery query;
+QString res= QString::number(etat);
+QString res1= QString::number(numero);
+QString res2= QString::number(larg);
+QString res3= QString::number(longeur);
+query.prepare("INSERT INTO Piste (reference, numero, etat, larg, longeur) "
+                       "VALUES (:reference, :numero, :etat, :larg, :longeur)");
+         query.bindValue(":reference", reference);
+         query.bindValue(":numero", res1);
+         query.bindValue(":etat", res);
+         query.bindValue(":larg", res2);
+          query.bindValue(":longeur", res3);
+
+        return query.exec();
+
+}
+bool Piste::supprimer(int numero )
+{
+    QSqlQuery query;
+    query.prepare("Delete from Piste where numero=:numero");
+         query.bindValue(0, numero);
+
+
+        return query.exec();
+}
+
+QSqlQueryModel* Piste::afficher()
+{
+
+
+    QSqlQueryModel* model= new QSqlQueryModel();
+          model->setQuery("SELECT * FROM Piste");
+          model->setHeaderData(0, Qt::Horizontal, QObject::tr("reference"));
+          model->setHeaderData(1, Qt::Horizontal, QObject::tr("numero"));
+          model->setHeaderData(2, Qt::Horizontal, QObject::tr("etat"));
+          model->setHeaderData(3, Qt::Horizontal, QObject::tr("larg"));
+          model->setHeaderData(4, Qt::Horizontal, QObject::tr("longeur"));
+
+
+    return model;
+   }
+
+bool Piste::modifier( Piste p)
+{
+
+    QSqlQuery edit;
+
+
+                      edit.prepare("update Piste set REFERENCE = :reference,ETAT = :etat,LARG = :larg,LONGEUR = :long WHERE NUMERO = :numero ");
+
+                      edit.bindValue(":refrence",p.getRef());
+                      edit.bindValue(":numero",p.getNum());
+                      edit.bindValue(":etat",p.getEtat());
+                      edit.bindValue(":larg",p.getLarg());
+                      edit.bindValue(":longeur",p.getLong());
+
+                      return    edit.exec();
+}
