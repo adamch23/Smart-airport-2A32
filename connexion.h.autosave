@@ -1,0 +1,11 @@
+#ifndef CONNEXION_H
+#define CONNEXION_H
+#include <QSQLDatabase>
+
+class connexion
+{ QSqlData
+public:
+    connexion();
+};
+
+#endif // CONNEXION_H
