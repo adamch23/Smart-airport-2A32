@@ -39,6 +39,14 @@ public:
     bool ajouter();
     bool supprimer(int cod_av);
     QSqlQueryModel * afficher();
+    bool modifier();
+    QSqlQueryModel * tri1();
+     QSqlQueryModel * tri2();
+    QSqlQueryModel * rechercher(QString type_av);
+
+
+
+
 };
 
 #endif // AVION_H

@@ -19,12 +19,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     avion.cpp \
     connection.cpp \
+    envoi_mail.cpp \
+    mail.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     avion.h \
     connection.h \
+    envoi_mail.h \
+    mail.h \
     mainwindow.h
 
 FORMS += \

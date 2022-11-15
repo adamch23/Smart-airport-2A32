@@ -30,7 +30,7 @@
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="ComptePersonnelPage2_2">
      <widget class="QTabWidget" name="tabWidget">
@@ -586,7 +586,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_6">
        <attribute name="title">
@@ -909,105 +909,6 @@
           </property>
          </widget>
         </widget>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="tab">
-       <attribute name="title">
-        <string>MAIL</string>
-       </attribute>
-       <widget class="QLineEdit" name="rcpt">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>40</y>
-          <width>221</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="placeholderText">
-         <string>recipient</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="mail_pass">
-        <property name="geometry">
-         <rect>
-          <x>250</x>
-          <y>40</y>
-          <width>141</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="echoMode">
-         <enum>QLineEdit::Password</enum>
-        </property>
-        <property name="placeholderText">
-         <string>your mail password</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="subject">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>90</y>
-          <width>351</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="placeholderText">
-         <string>subject</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="file">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>130</y>
-          <width>191</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="placeholderText">
-         <string>attachement here</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="browseBtn">
-        <property name="geometry">
-         <rect>
-          <x>220</x>
-          <y>130</y>
-          <width>75</width>
-          <height>24</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Browse ...</string>
-        </property>
-       </widget>
-       <widget class="QTextEdit" name="msg">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>160</y>
-          <width>381</width>
-          <height>151</height>
-         </rect>
-        </property>
-        <property name="placeholderText">
-         <string>type your message here ...</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="sendBtn">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>330</y>
-          <width>361</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Send</string>
-        </property>
        </widget>
       </widget>
      </widget>
