@@ -1,18 +1,20 @@
-#include"connection.h"
+#include "connection.h"
+
 Connection::Connection()
 {
 
 }
 
-bool Connection::createconnect()
-{bool test=false;
-db=QSqlDatabase::addDatabase("QODBC");
-db.setDatabaseName("Gestion_bagage");
-db.setUserName("system");//inserer nom de l'utilisateur
-db.setPassword("system");//inserer mot de passe de cet utilisateur
+bool Connection::createconnection()
+{
 
-if (db.open())
-test=true;
-    return test;
+db = QSqlDatabase::addDatabase("QODBC");
+ bool test=false;
+db.setDatabaseName("mybase");
+db.setUserName("roube");//inserer nom de l'utilisateur
+db.setPassword("roube");//inserer mot de passe de cet utilisateur
+
+if (db.open()) test=true;
+ return  test;
 }
-void Connection::closeConnection(){db.close();}
+ void Connection::closeconnection(){db.close();}
