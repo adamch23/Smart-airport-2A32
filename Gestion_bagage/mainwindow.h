@@ -3,7 +3,7 @@
 #include "bagageee.h"
 #include <QMainWindow>
 #include "calculatrice.h"
-
+#include"arduino.h"
 namespace Ui {
 class MainWindow;
 }
@@ -27,7 +27,7 @@ private slots:
 
     void on_TRI_clicked();
 
-
+void update_label();
     void on_lineEdit_2_textChanged(const QString &arg1);
 
     void on_rechid_textChanged(const QString &arg1);
@@ -38,14 +38,13 @@ private slots:
 
     void on_stats_clicked();
 
-    void on_rechid_cursorPositionChanged(int arg1, int arg2);
 
 private:
     Ui::MainWindow *ui;
     BAGAGEEE B;
     calculatrice *c;
-
-
+    Arduino A;
+    QByteArray data;
 };
 
 #endif // MAINWINDOW_H

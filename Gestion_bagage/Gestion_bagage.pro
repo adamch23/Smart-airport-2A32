@@ -7,7 +7,7 @@ QT       += core gui printsupport
 #-------------------------------------------------
 
 QT       += core gui sql multimedia
-
+QT += serialport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Atelier_Connexion
@@ -27,6 +27,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    arduino.cpp \
     bagageee.cpp \
     calculatrice.cpp \
     dialog_stats.cpp \
@@ -36,6 +37,7 @@ SOURCES += \
     qcustomplot.cpp
 
 HEADERS += \
+    arduino.h \
     bagageee.h \
     calculatrice.h \
     dialog_stats.h \

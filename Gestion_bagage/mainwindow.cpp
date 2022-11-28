@@ -27,8 +27,57 @@ MainWindow::MainWindow(QWidget *parent) :
    ui->rechid -> setValidator (new QIntValidator(0, 999999, this));
    ui->poids -> setValidator (new QIntValidator(0, 99, this));
 
+
+   int ret=A.connect_arduino(); // lancer la connexion à arduino
+           switch(ret){
+           case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+               break;
+           case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+              break;
+           case(-1):qDebug() << "arduino is not available";
+           }
+            QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+            //le slot update_label suite à la reception du signal readyRead (reception des données).
+
+
+
+
+}
+void MainWindow::update_label()
+{
+ data="";
+
+while((A.getdata().size()<6))
+{
+    QString key;
+data=A.read_from_arduino();
+
+break;
+
+}
+if(data.toInt()!=0)
+{int D=data.toInt();
+    if(A.chercherid(D)!=-1)
+    {
+        QMessageBox::information(nullptr, QObject::tr("id exist"),
+                    QObject::tr("id exist.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+    else
+    {  QMessageBox::critical(nullptr, QObject::tr("introuvlable"),
+                             QObject::tr("introuvlable.\n"
+                                         "Click Cancel to exit."), QMessageBox::Cancel);
 }
 
+ qDebug() << D ;
+}
+
+
+
+
+
+data="";
+}
 MainWindow::~MainWindow()
 {
     delete ui;
