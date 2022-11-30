@@ -3,8 +3,22 @@
 #include "avion.h"
 #include <QMainWindow>
 #include <QtWidgets>
-#include "mail.h"
-#include"envoi_mail.h"
+#include "smtp.h"
+#include <QMainWindow>
+#include <QSortFilterProxyModel>
+#include <QTextTableFormat>
+#include <QStandardItemModel>
+#include <QDialog>
+#include <QFileDialog>
+#include <QDialog>
+#include <QDesktopWidget>
+#include <QSettings>
+#include <QPrinter>
+#include <QTextStream>
+#include <QFile>
+#include <QDataStream>
+#include "arduino.h"
+
 namespace Ui { class MainWindow; }
 
 
@@ -40,13 +54,6 @@ private slots:
 
     void on_pushButton_prec_mail_clicked();
 
-    void on_pushButton_confirmer_mail_clicked();
-
-    void on_pushButton_prec_compte_mail_clicked();
-
-    void on_pushButton_envoyer_mail_clicked();
-
-   // void on_pushButton_rechercher_mail_clicked();
 
     void on_pushButton_ordre_desc_clicked();
 
@@ -57,10 +64,23 @@ private slots:
 
     void on_pushButton_prec_login_3_clicked();
 
+    void on_pdf_clicked();
+
+    void sendMail();
+    void mailSent(QString);
+    void browse();
+
+
+    void on_pushButton_GESTION_AVION_clicked();
+
+     void update_label();
+
 private:
     Ui::MainWindow *ui;
     AVION A;
-    mail M;
-    envoi_mail EM;
+    QStringList files;
+    QByteArray data; // variable contenant les données reçues
+
+    Arduino Ar; // objet temporaire
 };
 #endif // MAINWINDOW_H

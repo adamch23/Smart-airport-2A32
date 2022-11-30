@@ -1,3 +1,6 @@
+QT        += serialport
+QT       += core gui printsupport
+QT       += core gui sql network
 QT       += core gui
 QT+= sql
 
@@ -17,19 +20,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    arduino.cpp \
     avion.cpp \
     connection.cpp \
-    envoi_mail.cpp \
-    mail.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    smtp.cpp
 
 HEADERS += \
+    arduino.h \
     avion.h \
     connection.h \
-    envoi_mail.h \
-    mail.h \
-    mainwindow.h
+    mainwindow.h \
+    smtp.h
 
 FORMS += \
     mainwindow.ui

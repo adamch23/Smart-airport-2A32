@@ -20,8 +20,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>20</y>
+      <x>240</x>
+      <y>30</y>
       <width>451</width>
       <height>481</height>
      </rect>
@@ -30,7 +30,7 @@
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="ComptePersonnelPage2_2">
      <widget class="QTabWidget" name="tabWidget">
@@ -572,6 +572,118 @@
          <string>suivant</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="pdf">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>260</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>pdf</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>MAIL</string>
+       </attribute>
+       <widget class="QLineEdit" name="rcpt">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>241</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="placeholderText">
+         <string>recipient</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="mail_pass">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>30</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+        <property name="placeholderText">
+         <string>your mail password</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="subject">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>381</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="placeholderText">
+         <string>subject</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="file">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>120</y>
+          <width>261</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="placeholderText">
+         <string>attachement here</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="browseBtn">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>120</y>
+          <width>75</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Browse ...</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="msg">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>160</y>
+          <width>381</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="placeholderText">
+         <string>type your message here ...</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="sendBtn">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>270</y>
+          <width>361</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Send</string>
+        </property>
+       </widget>
       </widget>
      </widget>
     </widget>
@@ -682,331 +794,32 @@
       </widget>
       <widget class="QWidget" name="tab_8">
        <attribute name="title">
-        <string>Mailing</string>
+        <string>Détection de mouvement</string>
        </attribute>
-       <widget class="QStackedWidget" name="stackedWidget">
+       <widget class="QLabel" name="label_12">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>20</y>
-          <width>351</width>
-          <height>251</height>
-         </rect>
-        </property>
-        <property name="currentIndex">
-         <number>0</number>
-        </property>
-        <widget class="QWidget" name="page_5">
-         <widget class="QLabel" name="label_26">
-          <property name="geometry">
-           <rect>
-            <x>140</x>
-            <y>20</y>
-            <width>71</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Compte mail</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_27">
-          <property name="geometry">
-           <rect>
-            <x>30</x>
-            <y>80</y>
-            <width>71</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Adresse mail:</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_28">
-          <property name="geometry">
-           <rect>
-            <x>30</x>
-            <y>130</y>
-            <width>81</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Mot de passe :</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineEdit_20">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>80</y>
-            <width>113</width>
-            <height>20</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineEdit_21">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>130</y>
-            <width>113</width>
-            <height>20</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="pushButton_confirmer_mail">
-          <property name="geometry">
-           <rect>
-            <x>260</x>
-            <y>100</y>
-            <width>75</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Confirmer</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="pushButton_suivant_chat">
-          <property name="geometry">
-           <rect>
-            <x>260</x>
-            <y>150</y>
-            <width>75</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>suivant</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="pushButton_rechercher_mail">
-          <property name="geometry">
-           <rect>
-            <x>270</x>
-            <y>200</y>
-            <width>75</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Se connecter</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_33">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>200</y>
-            <width>141</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Adresse mail déjà connue :</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineEdit_mail_connu">
-          <property name="geometry">
-           <rect>
-            <x>150</x>
-            <y>200</y>
-            <width>113</width>
-            <height>20</height>
-           </rect>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QWidget" name="page_6">
-         <widget class="QLabel" name="label_29">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>20</y>
-            <width>101</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Nouveau message : </string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_30">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>60</y>
-            <width>16</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>A :</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineEdit_destinataire">
-          <property name="geometry">
-           <rect>
-            <x>30</x>
-            <y>60</y>
-            <width>191</width>
-            <height>20</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="pushButton_envoyer_mail">
-          <property name="geometry">
-           <rect>
-            <x>220</x>
-            <y>200</y>
-            <width>75</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Envoyer</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="pushButton_prec_compte_mail">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>200</y>
-            <width>75</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>précédent</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineEdit_mail_message">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>120</y>
-            <width>241</width>
-            <height>41</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_31">
-          <property name="geometry">
-           <rect>
-            <x>230</x>
-            <y>60</y>
-            <width>47</width>
-            <height>16</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Cc    Cci</string>
-          </property>
-         </widget>
-        </widget>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="tab">
-       <attribute name="title">
-        <string>MAIL</string>
-       </attribute>
-       <widget class="QLineEdit" name="rcpt">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>40</y>
-          <width>221</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="placeholderText">
-         <string>recipient</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="mail_pass">
-        <property name="geometry">
-         <rect>
-          <x>250</x>
-          <y>40</y>
-          <width>141</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="echoMode">
-         <enum>QLineEdit::Password</enum>
-        </property>
-        <property name="placeholderText">
-         <string>your mail password</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="subject">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>90</y>
-          <width>351</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="placeholderText">
-         <string>subject</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="file">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>130</y>
-          <width>191</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="placeholderText">
-         <string>attachement here</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="browseBtn">
-        <property name="geometry">
-         <rect>
-          <x>220</x>
-          <y>130</y>
-          <width>75</width>
-          <height>24</height>
+          <y>60</y>
+          <width>111</width>
+          <height>16</height>
          </rect>
         </property>
         <property name="text">
-         <string>Browse ...</string>
+         <string>Etat du mouvement :</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="msg">
+       <widget class="QLabel" name="label_13">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>160</y>
-          <width>381</width>
-          <height>151</height>
-         </rect>
-        </property>
-        <property name="placeholderText">
-         <string>type your message here ...</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="sendBtn">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>330</y>
-          <width>361</width>
-          <height>23</height>
+          <x>150</x>
+          <y>60</y>
+          <width>131</width>
+          <height>16</height>
          </rect>
         </property>
         <property name="text">
-         <string>Send</string>
+         <string/>
         </property>
        </widget>
       </widget>
@@ -1211,6 +1024,21 @@
       </property>
       <property name="text">
        <string>précédent</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QPushButton" name="pushButton_GESTION_AVION">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>90</y>
+        <width>131</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>GESTION D'AVION</string>
       </property>
      </widget>
     </widget>
