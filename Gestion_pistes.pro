@@ -1,8 +1,9 @@
-QT       += core gui
+QT       += core gui network
 QT+= sql
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets quickwidgets
 
 CONFIG += c++11 console
+QT += printsupport
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -19,12 +20,14 @@ SOURCES += \
     connection.cpp \
     main.cpp \
     mainwindow.cpp \
-    piste.cpp
+    piste.cpp \
+    smtp.cpp
 
 HEADERS += \
     connection.h \
     mainwindow.h \
-    piste.h
+    piste.h \
+    smtp.h
 
 FORMS += \
     mainwindow.ui
@@ -33,3 +36,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    qml.qrc

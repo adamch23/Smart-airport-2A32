@@ -5,6 +5,7 @@
 #include<QObject>
 #include<QTableView>
 #include <QSqlTableModel>
+
 Piste::Piste()
 {
     reference=" ";
@@ -86,19 +87,43 @@ QSqlQueryModel* Piste::afficher()
     return model;
    }
 
-bool Piste::modifier( Piste p)
+bool Piste::modifier()
 {
 
-    QSqlQuery edit;
+    QSqlQuery query;
+    query.prepare( "UPDATE Piste SET  numero =:numero, etat = :etat, larg= :larg, longeur =:longeur WHERE  reference =:reference");
+    query.bindValue(":numero",(int)numero);
+    query.bindValue(":etat",(int)etat);
+    query.bindValue(":larg",(int)larg);
+    query.bindValue(":longeur",(int)longeur);
+    query.bindValue(":reference", reference);
 
 
-                      edit.prepare("update Piste set REFERENCE = :reference,ETAT = :etat,LARG = :larg,LONGEUR = :long WHERE NUMERO = :numero ");
 
-                      edit.bindValue(":refrence",p.getRef());
-                      edit.bindValue(":numero",p.getNum());
-                      edit.bindValue(":etat",p.getEtat());
-                      edit.bindValue(":larg",p.getLarg());
-                      edit.bindValue(":longeur",p.getLong());
+ return query.exec();
 
-                      return    edit.exec();
+
 }
+void Piste::recherche(QTableView* table,int res1){
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
+    query->prepare("select * from Piste  where NUMERO = :numero");
+    query->bindValue(":numero",res1);
+    query->exec();
+    model->setQuery(*query);
+    table->setModel(model);
+    table->show();
+}
+
+QSqlQueryModel *Piste::tri()
+{
+
+    QSqlQuery *q = new QSqlQuery();
+    QSqlQueryModel *model = new QSqlQueryModel();
+    q->prepare("SELECT * FROM  Piste ORDER BY numero ");
+    q->exec();
+    model->setQuery(*q);
+    return model;
+}
+

@@ -35,7 +35,9 @@ public:
     bool ajouter();
     QSqlQueryModel * afficher();
     bool supprimer(int);
-    bool modifier(Piste);
+    bool modifier();
+     void recherche(QTableView* table,int);
+      QSqlQueryModel * tri();
 
 };
 

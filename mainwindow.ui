@@ -6,27 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1019</width>
+    <height>645</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QTabWidget" name="maps">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>-1</y>
-      <width>801</width>
-      <height>551</height>
+      <x>10</x>
+      <y>30</y>
+      <width>881</width>
+      <height>571</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QToolTip
 {
-     border: 1px solid black;
+     border: 1px solid white;
      background-color: #ffa02f;
      padding: 1px;
      border-radius: 3px;
@@ -645,7 +645,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="map">
      <attribute name="title">
       <string>Gerer piste </string>
      </attribute>
@@ -789,16 +789,6 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="modif_id">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>200</y>
-         <width>31</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_3">
       <property name="geometry">
@@ -832,7 +822,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
         </rect>
        </property>
        <property name="text">
-        <string>id</string>
+        <string>Num°</string>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton_4">
@@ -867,7 +857,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
        <rect>
         <x>40</x>
         <y>330</y>
-        <width>701</width>
+        <width>651</width>
         <height>171</height>
        </rect>
       </property>
@@ -875,7 +865,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
      <widget class="QPushButton" name="refrech">
       <property name="geometry">
        <rect>
-        <x>720</x>
+        <x>730</x>
         <y>290</y>
         <width>61</width>
         <height>20</height>
@@ -883,6 +873,144 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
       </property>
       <property name="text">
        <string>R</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="recherche">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>290</y>
+        <width>81</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="butt_rech">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>290</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Recherche</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>290</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Trier</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_6">
+      <property name="geometry">
+       <rect>
+        <x>700</x>
+        <y>400</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PDF</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_excel">
+      <property name="geometry">
+       <rect>
+        <x>700</x>
+        <y>360</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>excel</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>mailing</string>
+     </attribute>
+     <widget class="QLineEdit" name="a_mail">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>60</y>
+        <width>481</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>recepient </string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="objet_mail">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>110</y>
+        <width>661</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>search</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Send">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>390</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Send</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="message_mail">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>170</y>
+        <width>661</width>
+        <height>241</height>
+       </rect>
+      </property>
+     </widget>
+     <zorder>a_mail</zorder>
+     <zorder>objet_mail</zorder>
+     <zorder>message_mail</zorder>
+     <zorder>Send</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>map</string>
+     </attribute>
+     <widget class="QQuickWidget" name="quickWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>771</width>
+        <height>491</height>
+       </rect>
+      </property>
+      <property name="resizeMode">
+       <enum>QQuickWidget::SizeRootObjectToView</enum>
       </property>
      </widget>
     </widget>
@@ -893,13 +1021,20 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1019</width>
      <height>26</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QQuickWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">QtQuickWidgets/QQuickWidget</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
