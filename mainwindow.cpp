@@ -1,5 +1,8 @@
 #include "mainwindow.h"
 #include "vols.h"
+#include <QScrollArea>
+#include <QImageWriter>
+#include <QScrollBar>
 #include "avion.h"
 
 #include "billet.h"
@@ -29,12 +32,41 @@
 #include <QtSerialPort/QSerialPortInfo>
 #include "vols.h"
 #include <QMouseEvent>
-#include <QScrollArea>
+
 //#include "widget.h"
 #include "DuMessengerConnectionDialog.h"
 
 
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QPieSlice>
+#include <QtCharts/QChartView>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QtCharts>
+
+
 //
+
+const QString getIniPath()
+{
+    const static QString iniPath( qApp->applicationDirPath() + "/settings.ini" );
+    return iniPath;
+}
+QString saveFormats()
+{
+    static QString suffix;
+    foreach ( const QByteArray & format , QImageWriter::supportedImageFormats() )
+        suffix += QString( "%1 ( *.%2 )\n" )
+                .arg( QString( format ).toUpper() )
+                .arg( QString( format ) );
+
+    return suffix;
+}
 
 
 //
@@ -45,12 +77,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
    //roubee
     ui->ID -> setValidator (new QIntValidator(0, 999999, this));
     ui->ID_2 -> setValidator (new QIntValidator(0, 999999, this));
 
    ui->tabvalise->setModel(B.afficher());
-   ui->tableViewavion->setModel(A1.afficheravion());
    ui->rechid -> setValidator (new QIntValidator(0, 999999, this));
    ui->poids -> setValidator (new QIntValidator(0, 99, this));
    ui->poids_2 -> setValidator (new QIntValidator(0, 99, this));
@@ -135,7 +167,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
    });
-
 
 
    int ret=A.connect_arduino(); // lancer la connexion à arduino
@@ -935,25 +966,6 @@ void MainWindow::on_pushButton_prec_login_bagage_clicked()
     ui->stackedWidget->setCurrentIndex(3);
 }
 
-void MainWindow::update_label1()
-{
-    data=A.read_from_arduino();
-ui->label_13avion->setText("Mouvement non détecté ");
-    if(data=="1")
-
-      {
-
-        ui->label_13avion->setText("Mouvement détecté !!"); // si les données reçues de arduino via la liaison série sont égales à 1
-    // alors afficher Mouvement détecté
-
-
-    //QMessageBox::warning(this,"Détection du mouvement","Mouvement détecté !!");
-    }
-
-    //else if (data=="0")
-
-}
-
 void MainWindow:: on_envoyer_chat_clicked()
 {
     QTextStream T(mSocket);
@@ -1306,6 +1318,279 @@ void DuarteCorporation::MainWindow::on_export_excel_clicked()
                                 doc.print(&printer);
 }
 
+void DuarteCorporation::MainWindow::on_pushButton_3_clicked()
+{
+    QPieSeries *series = new QPieSeries();
+
+
+            QStringList list=v.listeDUREEDUVOL("CODEDEVOL");
+
+
+
+            for (int i =0; i< list.size();i++)
+            {
+                series->append(list[i],v.calcul_DUREEDUVOL(list[i],"CODEDEVOL"));
+
+            }
+            QPieSlice *slice = series->slices().at(1);
+            slice->setLabelVisible();
+            slice->setExploded();
+
+
+            QtCharts::QChart *chart =new QtCharts::QChart();
+            chart->addSeries(series);
+            chart->setTitle("Statistiques des CODEDEVOL");
+            chart->setAnimationOptions(QChart::AllAnimations);
+            QChartView *chartview=new QChartView(chart);
+            QGridLayout *mainLayout=new QGridLayout();
+            mainLayout->addWidget(chartview,0,0);
+            ui->label_91adam->setLayout(mainLayout);
+}
+
+void DuarteCorporation::MainWindow::on_pushButton_3adama_clicked()
+{
+    QPieSeries *series = new QPieSeries();
+
+
+            QStringList list=v.listeDUREEDUVOL("CODEDEVOL");
+
+
+
+            for (int i =0; i< list.size();i++)
+            {
+                series->append(list[i],v.calcul_DUREEDUVOL(list[i],"CODEDEVOL"));
+
+            }
+            QPieSlice *slice = series->slices().at(1);
+            slice->setLabelVisible();
+            slice->setExploded();
+
+
+            QtCharts::QChart *chart =new QtCharts::QChart();
+            chart->addSeries(series);
+            chart->setTitle("Statistiques des CODEDEVOL");
+            chart->setAnimationOptions(QChart::AllAnimations);
+            QChartView *chartview=new QChartView(chart);
+            QGridLayout *mainLayout=new QGridLayout();
+            mainLayout->addWidget(chartview,0,0);
+            ui->label_91adam->setLayout(mainLayout);
+}
+
+//nouveau qrcode
+
+
+void DuarteCorporation::MainWindow::on_QRgenerate_clicked()
+{
+    //ui->scrollArea->installEventFilter( this );
+
+
+
+    QSettings ini( getIniPath(), QSettings::IniFormat );
+    ui->splitter_2->restoreState( ini.value( ui->splitter_2->objectName() ).toByteArray() );
+    ui->splitter_3->restoreState( ini.value( ui->splitter_3->objectName() ).toByteArray() );
+    ui->sBoxScale_2->setValue( ini.value( ui->sBoxScale_2->objectName(), 4 ).toInt() );
+    restoreState( ini.value( "State" ).toByteArray() );
+    restoreGeometry( ini.value( "Geometry" ).toByteArray() );
+
+    setScale( ui->sBoxScale_2->value() );
+    updateQRImage();
+}
+
+//fin qrcode
+void DuarteCorporation::MainWindow::updateQRImage()
+{
+    int sizeText = ui->pTextEditQRText_2vols->toPlainText().size();
+    ui->labelSizeText_2->setText( QString::number( sizeText ) );
+
+    int levelIndex = 1;
+    int versionIndex = 0;
+    bool bExtent = true;
+    int maskIndex = -1;
+    QString encodeString = ui->pTextEditQRText_2vols->toPlainText();
+
+    successfulEncoding = qrEncode.EncodeData( levelIndex, versionIndex, bExtent, maskIndex, encodeString.toUtf8().data() );
+    if ( !successfulEncoding )
+    {
+        ui->image_label_2vols->clear();
+        ui->image_label_2vols->setText( tr("QR Code...") );
+        ui->labelSize_2->clear();
+        ui->pButtonSave_2->setEnabled( successfulEncoding );
+        return;
+    }
+
+    int qrImageSize = qrEncode.m_nSymbleSize;
+
+    // Создаем двумерный образ кода
+    encodeImageSize = qrImageSize + ( QR_MARGIN * 2 );
+    QImage encodeImage( encodeImageSize, encodeImageSize, QImage::Format_Mono );
+    encodeImage.fill( 1 );
+
+    // Создать двумерный образ кода
+    for ( int i = 0; i < qrImageSize; i++ )
+        for ( int j = 0; j < qrImageSize; j++ )
+            if ( qrEncode.m_byModuleData[i][j] )
+                encodeImage.setPixel( i + QR_MARGIN, j + QR_MARGIN, 0 );
+
+    ui->image_label_2vols->setPixmap( QPixmap::fromImage( encodeImage ) );
+
+    setScale(ui->sBoxScale_2->value());
+    ui->pButtonSave_2->setEnabled( successfulEncoding );
+}
+void DuarteCorporation::MainWindow::setScale(int scale)
+{
+    if ( successfulEncoding )
+    {
+        int scale_size = encodeImageSize * scale;
+
+        const QPixmap & scale_image = ui->image_label_2vols->pixmap()->scaled( scale_size, scale_size );
+        ui->image_label_2vols->setPixmap( scale_image );
+
+        const QString & size_info = QString( "%1x%2" ).arg( scale_size ).arg( scale_size );
+        ui->labelSize_2->setText( size_info );
+    }
+}
+
+void DuarteCorporation::MainWindow::on_pButtonSave_clicked()
+{
+    const QString & path = QFileDialog::getSaveFileName( this, QString ::null , "qrcode", saveFormats() );
+    if ( path.isNull() )
+        return;
+
+    ui->image_label_2vols->pixmap()->save( path );
+}
+void DuarteCorporation::MainWindow::on_sBoxScale_valueChanged(int arg1)
+{
+    setScale( arg1 );
+}
+void DuarteCorporation::MainWindow::on_pTextEditQRText_textChanged()
+{
+    updateQRImage();
+}
+void DuarteCorporation::MainWindow::on_pButtonQuit_clicked()
+{
+    close();
+}
+
+/*void DuarteCorporation::MainWindow::closeEvent(QCloseEvent *)
+{
+    QSettings ini( getIniPath(), QSettings::IniFormat );
+    ini.setValue( ui->splitter_3->objectName(), ui->splitter_3->saveState() );
+    ini.setValue( ui->splitter_2->objectName(), ui->splitter_2->saveState() );
+    ini.setValue( ui->sBoxScale_2->objectName(), ui->sBoxScale_2->value() );
+    ini.setValue( "State", saveState() );
+    ini.setValue( "Geometry", saveGeometry() );
+
+    qApp->quit();
+}*/
+/*bool DuarteCorporation::MainWindow::eventFilter( QObject * object, QEvent * event )
+{
+    QScrollArea * scrollArea = ui->scrollArea;
+
+    if ( object == scrollArea )
+    {
+        if ( event->type() == QEvent::MouseButtonPress )
+        {
+            QMouseEvent * mouseEvent = static_cast < QMouseEvent * > ( event );
+            if ( mouseEvent->button() == Qt::LeftButton )
+            {
+                lastPos = mouseEvent->pos();
+
+                if( scrollArea->horizontalScrollBar()->isVisible()
+                        || scrollArea->verticalScrollBar()->isVisible() )
+                    scrollArea->setCursor( Qt::ClosedHandCursor );
+                else
+                    scrollArea->setCursor( Qt::ArrowCursor );
+            }
+
+        }else if ( event->type() == QEvent::MouseMove )
+        {
+            QMouseEvent *mouseEvent = static_cast < QMouseEvent * > ( event );
+
+            if ( mouseEvent->buttons() == Qt::LeftButton )
+            {
+                lastPos -= mouseEvent->pos();
+
+                int hValue = scrollArea->horizontalScrollBar()->value();
+                int vValue = scrollArea->verticalScrollBar()->value();
+
+                scrollArea->horizontalScrollBar()->setValue( lastPos.x() + hValue );
+                scrollArea->verticalScrollBar()->setValue( lastPos.y() + vValue );
+
+                lastPos = mouseEvent->pos();
+            }
+
+        }else if ( event->type() == QEvent::MouseButtonRelease )
+            scrollArea->setCursor( Qt::ArrowCursor );
+    }
+
+    return QWidget::eventFilter(object, event);
+}
+
+
+*/
+
+void DuarteCorporation::MainWindow::on_pushButton_4vols_clicked()
+{
+      A.write_to_arduino("1"); //envoyer 1 à arduino
+}
+
+void DuarteCorporation::MainWindow::on_pushButton_7vols_clicked()
+{
+    A.write_to_arduino("0");  //envoyer 0 à arduino
+}
+
+void DuarteCorporation::MainWindow::on_pushButton_8vols_clicked()
+{
+    QString CODEDEVOL=ui->lineEdit_18->text();
+    QSqlQuery query;
+
+    QByteArray message;
+
+    QString ch;
+
+
+
+    query.prepare("select TRANSIT from VOLS where CODEDEVOL = "+CODEDEVOL+"");
+    if (query.exec())
+                        {
+                            while(query.next())
+                            {
+                             ch =query.value(0).toString();
+
+                            }
+
+                            message=ch.toUtf8();
+                            A.write_to_arduino("4") ;
+                             A.write_to_arduino(message) ;}
+
+                             else {
+
+
+
+                               A.write_to_arduino("CODE INVALIDE") ;}
+
+}
+
+void DuarteCorporation::MainWindow::update_label2()
+{
+    data=A.read_from_arduino();
+ui->label_13avion->setText("Mouvement non détecté");
+    if(data=="1")
+
+      {
+
+        ui->label_13avion->setText("Mouvement détecté !!"); // si les données reçues de arduino via la liaison série sont égales à 1
+    // alors afficher Mouvement détecté
+
+
+    //QMessageBox::warning(this,"Détection du mouvement","Mouvement détecté !!");
+    }
+
+    //else if (data=="0")
+
+}
+
+
 void DuarteCorporation::MainWindow::on_envoyer_chat_4_clicked()
 {
     QTextStream T(mSocket4);
@@ -1316,7 +1601,6 @@ void DuarteCorporation::MainWindow::on_envoyer_chat_4_clicked()
 
 void DuarteCorporation::MainWindow::on_connecter_chat_4_clicked()
 {
-
     DuMessengerConnectionDialog D(this);
     if(D.exec() == QDialog :: Rejected)
        {

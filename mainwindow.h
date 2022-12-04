@@ -12,10 +12,14 @@
 #include "billet.h"
 
 #include "vols.h"
+#include <QEvent>
+#include "QRCodeGenerator.h"
+QT_BEGIN_NAMESPACE
 
 namespace Ui {
 class MainWindow;
 }
+QT_END_NAMESPACE
 class QTcpSocket;;
 
 namespace DuarteCorporation
@@ -40,7 +44,7 @@ private slots:
 
     void on_TRI_clicked();
 
-void update_label();
+    void update_label();
     void on_lineEdit_2_textChanged(const QString &arg1);
 
     void on_rechid_textChanged(const QString &arg1);
@@ -119,8 +123,6 @@ void update_label();
 
     void on_pushButton_prec_login_bagage_clicked();
 
-    void update_label1();
-
 
     void on_envoyer_chat_clicked();
 
@@ -163,6 +165,33 @@ void update_label();
 
     void on_export_excel_clicked();
 
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_3adama_clicked();
+
+    void update_label2();
+//
+private:
+    void updateQRImage();
+    void setScale(int);
+
+
+
+
+private slots:
+    void on_pButtonSave_clicked();
+    void on_sBoxScale_valueChanged(int arg1);
+    void on_pTextEditQRText_textChanged();
+    void on_pButtonQuit_clicked();
+    void on_QRgenerate_clicked();
+    //
+
+    void on_pushButton_4vols_clicked();
+
+    void on_pushButton_7vols_clicked();
+
+    void on_pushButton_8vols_clicked();
+
     void on_envoyer_chat_4_clicked();
 
     void on_connecter_chat_4_clicked();
@@ -182,12 +211,14 @@ private:
             QString idA=QStringLiteral("");
              arduino A ;
              VOLS Etmp;
-           //  CQR_Encode qrEncode;
+             CQR_Encode qrEncode;
              bool successfulEncoding;
              int encodeImageSize;
              QPoint lastPos;
 protected:
 
+   // void closeEvent(QCloseEvent *);
+    //bool eventFilter( QObject * object, QEvent * event );
 
     VOLS v;
     billet tmpbillet;

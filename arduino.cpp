@@ -77,3 +77,4 @@ int arduino::write_to_arduino( QByteArray d)
 
 
 }
+

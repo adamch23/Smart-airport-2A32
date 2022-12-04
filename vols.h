@@ -32,9 +32,11 @@ public:
     void setDUREEDUVOL(QString);
     void setDATEDEDECOLAGE(QString);
     void setDATEDARRIVAGE(QString);
-    void setTRANSIT(QString);
-    QStringList listeDUREEDUVOL(QString var) ;
-    int calcul_DUREEDUVOL(QString adresse,QString val);
+
+   void setTRANSIT(QString);
+
+   QStringList listeDUREEDUVOL(QString var) ;
+    int calcul_DUREEDUVOL(QString CODEDEVOL,QString val);
 
     bool ajoutervols();
     bool supprimervols(QString CODEDEVOL);
@@ -44,7 +46,6 @@ public:
  QSqlQueryModel* trie2vols();
  QSqlQueryModel *recherchervols(QString CODEDEVOL);
  QSqlQueryModel *rechercher_Datevols(QDate DATEDEDECOLAGE );
-
 
 
  QSqlQueryModel *affichercalendriervols();

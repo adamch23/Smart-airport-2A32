@@ -13,6 +13,7 @@ public:
     QByteArray read_from_arduino();  //recevoir des données de la carte Arduino
     QSerialPort* getserial();   // accesseur
     QString getarduino_port_name();
+    QByteArray read_from_arduino1();
 private:
 QSerialPort * serial; //Cet objet rassemble des informations (vitesse, bits de données, etc.)
 //et des fonctions (envoi, lecture de réception,…) sur ce qu’est une voie série pour Arduino.

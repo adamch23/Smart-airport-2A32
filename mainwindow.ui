@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>9</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page_4">
      <widget class="QTabWidget" name="tabWidget">
@@ -1743,8 +1743,8 @@
          <rect>
           <x>5</x>
           <y>5</y>
-          <width>481</width>
-          <height>301</height>
+          <width>21</width>
+          <height>21</height>
          </rect>
         </property>
         <property name="text">
@@ -1754,14 +1754,40 @@
        <widget class="QPushButton" name="statadam">
         <property name="geometry">
          <rect>
-          <x>420</x>
-          <y>320</y>
-          <width>93</width>
+          <x>30</x>
+          <y>390</y>
+          <width>16</width>
           <height>28</height>
          </rect>
         </property>
         <property name="text">
          <string>statistique</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_91adam">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>50</y>
+          <width>401</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>statsadem</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_3adama">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>340</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
         </property>
        </widget>
       </widget>
@@ -2031,7 +2057,7 @@
        <attribute name="title">
         <string>arduino</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="pushButton_4vols">
         <property name="geometry">
          <rect>
           <x>460</x>
@@ -2044,7 +2070,7 @@
          <string>LAMPE ON</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_7">
+       <widget class="QPushButton" name="pushButton_7vols">
         <property name="geometry">
          <rect>
           <x>460</x>
@@ -2067,7 +2093,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_8">
+       <widget class="QPushButton" name="pushButton_8vols">
         <property name="geometry">
          <rect>
           <x>210</x>
@@ -2170,26 +2196,13 @@
      </widget>
     </widget>
     <widget class="QWidget" name="page_3">
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>10</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>AVION</string>
-      </property>
-     </widget>
      <widget class="QTabWidget" name="tabWidget_3">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>70</y>
-        <width>411</width>
-        <height>351</height>
+        <x>30</x>
+        <y>40</y>
+        <width>621</width>
+        <height>361</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -2351,9 +2364,7 @@
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 8pt &quot;Ravie&quot;;
-
-</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string>Ajouter</string>
@@ -2399,7 +2410,7 @@
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string>précédent</string>
@@ -2482,7 +2493,7 @@
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string>Supprimer</string>
@@ -2683,7 +2694,7 @@
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string>modifier</string>
@@ -2723,22 +2734,6 @@
          </rect>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_suivant_triavion">
-        <property name="geometry">
-         <rect>
-          <x>290</x>
-          <y>270</y>
-          <width>75</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
-        </property>
-        <property name="text">
-         <string>suivant</string>
-        </property>
-       </widget>
        <widget class="QPushButton" name="pdfavion">
         <property name="geometry">
          <rect>
@@ -2749,7 +2744,7 @@
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string>pdf</string>
@@ -2758,7 +2753,7 @@
       </widget>
       <widget class="QWidget" name="tab_19">
        <attribute name="title">
-        <string>MAIL</string>
+        <string>Mail</string>
        </attribute>
        <widget class="QLineEdit" name="rcpt">
         <property name="geometry">
@@ -2825,7 +2820,7 @@
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string>Browse ...</string>
@@ -2854,21 +2849,226 @@
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string>Send</string>
         </property>
        </widget>
       </widget>
+      <widget class="QWidget" name="tab_20">
+       <attribute name="title">
+        <string>Recherche</string>
+       </attribute>
+       <widget class="QLineEdit" name="recherchebuttonavion">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>30</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTableView" name="tableView_4avion">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>110</y>
+          <width>351</width>
+          <height>161</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_60">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>30</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Le type d'avions :</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_21">
+       <attribute name="title">
+        <string>Tri</string>
+       </attribute>
+       <widget class="QTableView" name="tableView_3avion">
+        <property name="geometry">
+         <rect>
+          <x>46</x>
+          <y>70</y>
+          <width>351</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_ordre_ascavion">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>40</y>
+          <width>141</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Ordre croissant</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_ordre_descavion">
+        <property name="geometry">
+         <rect>
+          <x>36</x>
+          <y>40</y>
+          <width>151</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>Ordre décroissant</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_22">
+       <attribute name="title">
+        <string>arduino</string>
+       </attribute>
+       <widget class="QLabel" name="label_13avion">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>110</y>
+          <width>301</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_61">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>110</y>
+          <width>111</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Etat du mouvement :</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_23">
+       <attribute name="title">
+        <string>Chat</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>80</y>
+          <width>169</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QLabel" name="label_91">
+           <property name="text">
+            <string>Surnom :</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="surnom"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QTextEdit" name="textEdit">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>130</y>
+          <width>331</width>
+          <height>101</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget_6">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>260</y>
+          <width>335</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QLabel" name="label_92">
+           <property name="text">
+            <string>Message :</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="message_chat"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="envoyer_chat">
+           <property name="text">
+            <string>Envoyer</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="connecter_chat">
+           <property name="text">
+            <string>Connecter</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="page_6">
+     <widget class="QPushButton" name="pushButton_prec_login_billet">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>350</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>précédent</string>
+      </property>
+     </widget>
      <widget class="QTabWidget" name="tabWidget_5">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>30</y>
+        <x>-10</x>
+        <y>10</y>
         <width>691</width>
         <height>301</height>
        </rect>
@@ -3254,19 +3454,6 @@ max-height: 20px;
         </property>
         <property name="text">
          <string>pdf</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_prec_login_billet">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>240</y>
-          <width>75</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>précédent</string>
         </property>
        </widget>
       </widget>
@@ -3946,28 +4133,18 @@ border-radius: 8px;
        <attribute name="title">
         <string>Chat</string>
        </attribute>
-       <widget class="QTextEdit" name="textEdit_4">
+       <widget class="QWidget" name="layoutWidget_7">
         <property name="geometry">
          <rect>
-          <x>160</x>
-          <y>100</y>
-          <width>331</width>
-          <height>101</height>
+          <x>200</x>
+          <y>40</y>
+          <width>169</width>
+          <height>24</height>
          </rect>
         </property>
-       </widget>
-       <widget class="QWidget" name="">
-        <property name="geometry">
-         <rect>
-          <x>180</x>
-          <y>50</y>
-          <width>211</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
          <item>
-          <widget class="QLabel" name="label_91">
+          <widget class="QLabel" name="label_93">
            <property name="text">
             <string>Surnom :</string>
            </property>
@@ -3978,18 +4155,18 @@ border-radius: 8px;
          </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget_8">
         <property name="geometry">
          <rect>
-          <x>150</x>
-          <y>230</y>
-          <width>377</width>
-          <height>25</height>
+          <x>140</x>
+          <y>200</y>
+          <width>335</width>
+          <height>30</height>
          </rect>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_9">
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
          <item>
-          <widget class="QLabel" name="label_92">
+          <widget class="QLabel" name="label_94">
            <property name="text">
             <string>Message :</string>
            </property>
@@ -4013,6 +4190,16 @@ border-radius: 8px;
           </widget>
          </item>
         </layout>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_4">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>70</y>
+          <width>331</width>
+          <height>101</height>
+         </rect>
+        </property>
        </widget>
       </widget>
      </widget>
@@ -4043,226 +4230,6 @@ border-radius: 8px;
       <property name="text">
        <string>précédent</string>
       </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="page_8">
-     <widget class="QTabWidget" name="tabWidget_4">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>60</y>
-        <width>401</width>
-        <height>411</height>
-       </rect>
-      </property>
-      <property name="currentIndex">
-       <number>3</number>
-      </property>
-      <widget class="QWidget" name="tab_20">
-       <attribute name="title">
-        <string>Recherche</string>
-       </attribute>
-       <widget class="QLabel" name="label_60">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>91</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Le type d'avions :</string>
-        </property>
-       </widget>
-       <widget class="QTableView" name="tableView_4avion">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>100</y>
-          <width>351</width>
-          <height>161</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="recherchebuttonavion">
-        <property name="geometry">
-         <rect>
-          <x>120</x>
-          <y>20</y>
-          <width>113</width>
-          <height>20</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_prec_ajoutavion">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>320</y>
-          <width>75</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>précédent</string>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="tab_21">
-       <attribute name="title">
-        <string>Tri</string>
-       </attribute>
-       <widget class="QTableView" name="tableView_3avion">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>40</y>
-          <width>351</width>
-          <height>192</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_ordre_descavion">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>10</y>
-          <width>151</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
-        </property>
-        <property name="text">
-         <string>Ordre décroissant</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_ordre_ascavion">
-        <property name="geometry">
-         <rect>
-          <x>214</x>
-          <y>10</y>
-          <width>141</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
-        </property>
-        <property name="text">
-         <string>Ordre croissant</string>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="tab_22">
-       <attribute name="title">
-        <string>Détection de mouvement</string>
-       </attribute>
-       <widget class="QLabel" name="label_61">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>60</y>
-          <width>111</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Etat du mouvement :</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_13avion">
-        <property name="geometry">
-         <rect>
-          <x>150</x>
-          <y>60</y>
-          <width>301</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="tab_23">
-       <attribute name="title">
-        <string>Chat</string>
-       </attribute>
-       <widget class="QTextEdit" name="textEdit">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>70</y>
-          <width>331</width>
-          <height>101</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QWidget" name="layoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>30</y>
-          <width>169</width>
-          <height>24</height>
-         </rect>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QLabel" name="label_62">
-           <property name="text">
-            <string>Surnom :</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="surnom"/>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="layoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>210</y>
-          <width>335</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QLabel" name="label_63">
-           <property name="text">
-            <string>Message :</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="message_chat"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="envoyer_chat">
-           <property name="text">
-            <string>Envoyer</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="connecter_chat">
-           <property name="text">
-            <string>Connecter</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </widget>
      </widget>
     </widget>
    </widget>

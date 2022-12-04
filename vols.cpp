@@ -4,6 +4,11 @@
 #include <QSqlQueryModel>
 #include <QtDebug>
 #include <QCalendarWidget>
+#include <QObject>
+#include <iostream>
+#include <QMessageBox>
+
+
 VOLS::VOLS()
 {
     CODEDEVOL=0;
@@ -175,11 +180,11 @@ QStringList VOLS::listeDUREEDUVOL(QString var){
 
     return list;
 }
-int VOLS::calcul_DUREEDUVOL(QString adresse,QString val)
+int VOLS::calcul_DUREEDUVOL(QString CODEDEVOL,QString val)
 {
     QSqlQuery query;
-     query.prepare("select  * from VOLS  WHERE "+val+"=:adresse");
-     query.bindValue(":adresse", adresse );
+     query.prepare("select  * from VOLS  WHERE "+val+"=:CODEDEVOL");
+     query.bindValue(":CODEDEVOL", CODEDEVOL );
      query.exec();
      int total=0;
      while(query.next())

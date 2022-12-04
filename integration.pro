@@ -1,6 +1,7 @@
 QT       += core network
 QT       += core gui network
 QT       += core gui printsupport
+
 #-------------------------------------------------
 #
 # Project created by QtCreator 2018-10-26T21:45:23
@@ -9,6 +10,7 @@ QT       += core gui printsupport
 
 QT       += core gui sql multimedia
 QT += serialport
+QT += charts
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Atelier_Connexion
@@ -31,6 +33,7 @@ SOURCES += \
     DuMessengerConnectionDialog.cpp \
     DuMessengerServer.cpp \
     DuMessengerSocket.cpp \
+    QRCodeGenerator.cpp \
     arduino.cpp \
     avion.cpp \
     bagageee.cpp \
@@ -49,6 +52,7 @@ HEADERS += \
     DuMessengerConnectionDialog.h \
     DuMessengerServer.h \
     DuMessengerSocket.h \
+    QRCodeGenerator.h \
     arduino.h \
     avion.h \
     bagageee.h \
