@@ -3,6 +3,7 @@
 #include<QObject>
 #include <QApplication>
 #include "connection.h"
+#include <QTextCodec>
 
 int main(int argc, char *argv[])
 {

@@ -1,5 +1,5 @@
-#ifndef AVION_H
-#define AVION_H
+#ifndef VOLS_H
+#define VOLS_H
 #include<QString>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
@@ -33,11 +33,21 @@ public:
     void setDATEDEDECOLAGE(QString);
     void setDATEDARRIVAGE(QString);
     void setTRANSIT(QString);
-
+    QStringList listeDUREEDUVOL(QString var) ;
+    int calcul_DUREEDUVOL(QString adresse,QString val);
 
     bool ajouter();
     bool supprimer(QString CODEDEVOL);
     QSqlQueryModel * afficher();
+    bool modifier();
+    QSqlQueryModel* trie();
+ QSqlQueryModel* trie2();
+ QSqlQueryModel *rechercher(QString CODEDEVOL);
+ QSqlQueryModel *rechercher_Date(QDate DATEDEDECOLAGE );
+
+
+
+ QSqlQueryModel *affichercalendrier();
 
 };
 
