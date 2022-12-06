@@ -20,30 +20,30 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>30</y>
+      <x>230</x>
+      <y>20</y>
       <width>451</width>
-      <height>481</height>
+      <height>401</height>
      </rect>
     </property>
     <property name="tabletTracking">
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="ComptePersonnelPage2_2">
      <widget class="QTabWidget" name="tabWidget">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>0</y>
+        <x>10</x>
+        <y>20</y>
         <width>411</width>
         <height>351</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -149,7 +149,7 @@
          <string>Numéro du hangar :</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_7">
+       <widget class="QLineEdit" name="lineEdit_7avion">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -159,7 +159,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_9">
+       <widget class="QLineEdit" name="lineEdit_9avion">
         <property name="geometry">
          <rect>
           <x>130</x>
@@ -185,13 +185,13 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../Downloads/b_ajout.png</pixmap>
+         <pixmap>../b_ajout.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushboutton_ajouter">
+       <widget class="QPushButton" name="pushboutton_ajouteravion">
         <property name="geometry">
          <rect>
           <x>240</x>
@@ -200,11 +200,16 @@
           <height>23</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Ravie&quot;;
+
+</string>
+        </property>
         <property name="text">
          <string>Ajouter</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_3">
+       <widget class="QLineEdit" name="lineEdit_3avion">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -214,7 +219,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_10">
+       <widget class="QLineEdit" name="lineEdit_10avion">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -224,7 +229,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_12">
+       <widget class="QLineEdit" name="lineEdit_12avion">
         <property name="geometry">
          <rect>
           <x>170</x>
@@ -243,11 +248,14 @@
           <height>23</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
+        </property>
         <property name="text">
          <string>précédent</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="lineEditavion">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -257,7 +265,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_2">
+       <widget class="QLineEdit" name="lineEdit_2avion">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -285,7 +293,7 @@
          <string>Le code d'avions  :</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_25">
+       <widget class="QLineEdit" name="lineEdit_25avion">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -308,20 +316,23 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../Downloads/b_supprimer.png</pixmap>
+         <pixmap>../b_supprimer.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_supprimer">
+       <widget class="QPushButton" name="pushButton_supprimeravion">
         <property name="geometry">
          <rect>
-          <x>300</x>
+          <x>284</x>
           <y>250</y>
-          <width>75</width>
+          <width>91</width>
           <height>23</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
         </property>
         <property name="text">
          <string>Supprimer</string>
@@ -423,7 +434,7 @@
          <string>Numéro du hangar   :</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_code2">
+       <widget class="QLineEdit" name="lineEdit_code2avion">
         <property name="geometry">
          <rect>
           <x>160</x>
@@ -433,7 +444,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_typeavion2">
+       <widget class="QLineEdit" name="lineEdit_typeavion2avion">
         <property name="geometry">
          <rect>
           <x>110</x>
@@ -443,7 +454,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_numavi2">
+       <widget class="QLineEdit" name="lineEdit_numavi2avion">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -453,7 +464,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_fct2">
+       <widget class="QLineEdit" name="lineEdit_fct2avion">
         <property name="geometry">
          <rect>
           <x>170</x>
@@ -463,7 +474,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_numhangar2">
+       <widget class="QLineEdit" name="lineEdit_numhangar2avion">
         <property name="geometry">
          <rect>
           <x>130</x>
@@ -486,13 +497,13 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../Downloads/b_miseàjour.png</pixmap>
+         <pixmap>../b_miseàjour.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_dep2">
+       <widget class="QLineEdit" name="lineEdit_dep2avion">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -502,7 +513,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_arr2">
+       <widget class="QLineEdit" name="lineEdit_arr2avion">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -512,7 +523,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushbutton_modifier1">
+       <widget class="QPushButton" name="pushbutton_modifier1avion">
         <property name="geometry">
          <rect>
           <x>300</x>
@@ -520,6 +531,9 @@
           <width>75</width>
           <height>23</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
         </property>
         <property name="text">
          <string>modifier</string>
@@ -543,13 +557,13 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../../Downloads/b_afficher.png</pixmap>
+         <pixmap>../b_afficher.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
         </property>
        </widget>
-       <widget class="QTableView" name="tableView">
+       <widget class="QTableView" name="tableViewavion">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -559,7 +573,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_suivant_mail">
+       <widget class="QPushButton" name="pushButton_suivant_mailavion">
         <property name="geometry">
          <rect>
           <x>290</x>
@@ -568,11 +582,14 @@
           <height>23</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
+        </property>
         <property name="text">
          <string>suivant</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pdf">
+       <widget class="QPushButton" name="pdfavion">
         <property name="geometry">
          <rect>
           <x>100</x>
@@ -580,6 +597,9 @@
           <width>75</width>
           <height>23</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
         </property>
         <property name="text">
          <string>pdf</string>
@@ -650,9 +670,12 @@
          <rect>
           <x>280</x>
           <y>120</y>
-          <width>75</width>
+          <width>91</width>
           <height>24</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
         </property>
         <property name="text">
          <string>Browse ...</string>
@@ -680,6 +703,9 @@
           <height>23</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
+        </property>
         <property name="text">
          <string>Send</string>
         </property>
@@ -691,7 +717,7 @@
      <widget class="QTabWidget" name="tabWidget_2">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>30</x>
         <y>30</y>
         <width>401</width>
         <height>411</height>
@@ -700,60 +726,6 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab_6">
-       <attribute name="title">
-        <string>Tri</string>
-       </attribute>
-       <widget class="QTableView" name="tableView_3">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>40</y>
-          <width>351</width>
-          <height>192</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_prec_ajout">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>290</y>
-          <width>75</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>précédent</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_ordre_desc">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>10</y>
-          <width>101</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Ordre décroissant</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_ordre_asc">
-        <property name="geometry">
-         <rect>
-          <x>254</x>
-          <y>10</y>
-          <width>101</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Ordre croissant</string>
-        </property>
-       </widget>
-      </widget>
       <widget class="QWidget" name="tab_7">
        <attribute name="title">
         <string>Recherche</string>
@@ -771,7 +743,7 @@
          <string>Le type d'avions :</string>
         </property>
        </widget>
-       <widget class="QTableView" name="tableView_4">
+       <widget class="QTableView" name="tableView_4avion">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -781,7 +753,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLineEdit" name="recherchebutton">
+       <widget class="QLineEdit" name="recherchebuttonavion">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -789,6 +761,66 @@
           <width>113</width>
           <height>20</height>
          </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_6">
+       <attribute name="title">
+        <string>Tri</string>
+       </attribute>
+       <widget class="QTableView" name="tableView_3avion">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>351</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_prec_ajoutavion">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>290</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>précédent</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_ordre_descavion">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>151</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Ordre décroissant</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_ordre_ascavion">
+        <property name="geometry">
+         <rect>
+          <x>214</x>
+          <y>10</y>
+          <width>141</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Ordre croissant</string>
         </property>
        </widget>
       </widget>
@@ -809,7 +841,7 @@
          <string>Etat du mouvement :</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_13">
+       <widget class="QLabel" name="label_13avion">
         <property name="geometry">
          <rect>
           <x>150</x>
@@ -818,315 +850,14 @@
           <height>16</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">font: 8pt &quot;Ravie&quot;;</string>
+        </property>
         <property name="text">
          <string/>
         </property>
        </widget>
       </widget>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="ComptePersonnelPage4_2">
-     <widget class="QLabel" name="label_38">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>0</y>
-        <width>51</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>CHAT</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_39">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>80</y>
-        <width>121</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Nom de l'utilisateur :</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_40">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>110</y>
-        <width>71</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Password :</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_5">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>80</y>
-        <width>101</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_6">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>110</y>
-        <width>111</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_41">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>160</y>
-        <width>111</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Bienvenue à vous :</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_8">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>160</y>
-        <width>113</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_2">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>60</y>
-        <width>191</width>
-        <height>241</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Groupe de discussion :</string>
-      </property>
-      <widget class="QScrollArea" name="scrollArea_2">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>30</y>
-         <width>171</width>
-         <height>201</height>
-        </rect>
-       </property>
-       <property name="widgetResizable">
-        <bool>true</bool>
-       </property>
-       <widget class="QWidget" name="scrollAreaWidgetContents_2">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>169</width>
-          <height>199</height>
-         </rect>
-        </property>
-        <widget class="QTextEdit" name="textEdit_2">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>10</y>
-           <width>151</width>
-           <height>181</height>
-          </rect>
-         </property>
-        </widget>
-       </widget>
-      </widget>
-     </widget>
-     <widget class="QGroupBox" name="groupBox">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>190</y>
-        <width>231</width>
-        <height>111</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Message :</string>
-      </property>
-      <widget class="QScrollArea" name="scrollArea">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>19</y>
-         <width>201</width>
-         <height>91</height>
-        </rect>
-       </property>
-       <property name="widgetResizable">
-        <bool>true</bool>
-       </property>
-       <widget class="QWidget" name="scrollAreaWidgetContents">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>199</width>
-          <height>89</height>
-         </rect>
-        </property>
-        <widget class="QTextEdit" name="textEdit_texte_message">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>10</y>
-           <width>181</width>
-           <height>71</height>
-          </rect>
-         </property>
-        </widget>
-       </widget>
-      </widget>
-     </widget>
-     <widget class="QPushButton" name="pushButton_envoyer_chat">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>350</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Envoyer</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_prec_mail">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>350</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>précédent</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="page_2">
-     <widget class="QPushButton" name="pushButton_GESTION_AVION">
-      <property name="geometry">
-       <rect>
-        <x>190</x>
-        <y>90</y>
-        <width>131</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>GESTION D'AVION</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="page">
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>60</y>
-        <width>101</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Compte Personnel</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>130</y>
-        <width>91</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Nom d'utilisateur :</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_nu">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>150</y>
-        <width>113</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>200</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Mot de passe :</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_mdp">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>220</y>
-        <width>113</width>
-        <height>20</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_login">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>180</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Valider</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_quitter">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>250</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Quitter</string>
-      </property>
      </widget>
     </widget>
    </widget>

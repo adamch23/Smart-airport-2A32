@@ -36,13 +36,14 @@ public:
     void setfct_av(QString);
     void setnum_hang(int);
 
-    bool ajouter();
-    bool supprimer(int cod_av);
-    QSqlQueryModel * afficher();
-    bool modifier();
-    QSqlQueryModel * tri1();
-     QSqlQueryModel * tri2();
-    QSqlQueryModel * rechercher(QString type_av);
+    bool ajouteravion();
+    /*bool supprimer(int cod_av);*/
+    bool supprimeravion(int);
+    QSqlQueryModel * afficheravion();
+    bool modifieravion();
+    QSqlQueryModel * tri1avion();
+     QSqlQueryModel * tri2avion();
+    QSqlQueryModel * rechercheravion(QString type_av);
 
 
 

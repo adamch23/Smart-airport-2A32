@@ -33,10 +33,10 @@ MainWindow::MainWindow(QWidget *parent)
      c.createconnection();
     //QPixmap pix("C:/User/Téléchargementslogin.png");
     //ui->label_login->setPixmap(pix);
-    ui->lineEdit_3->setValidator(new QIntValidator (0,9999, this));
-    ui->lineEdit_25->setValidator(new QIntValidator (0,9999, this));
+    ui->lineEdit_3avion->setValidator(new QIntValidator (0,9999, this));
+    ui->lineEdit_25avion->setValidator(new QIntValidator (0,9999, this));
 
-    ui->tableView->setModel(A.afficher());
+    ui->tableViewavion->setModel(A.afficheravion());
 
     //for email tab
     connect(ui->sendBtn, SIGNAL(clicked()),this, SLOT(sendMail()));
@@ -60,59 +60,26 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_login_clicked()
+
+
+
+
+void MainWindow::on_pushboutton_ajouteravion_clicked()
 {
-    MainWindow w;
-
-   QString  username=ui->lineEdit_nu->text();
-   QString mot_passe=ui->lineEdit_mdp->text();
-
-   if(username=="AZERTY" && mot_passe!="ADMIN")
-   {
-      QMessageBox::information(this,"Login","Nom d'utilisateur correcte");
-      QMessageBox::warning(this,"Login","Mot de passe incorrecte");
-    }
-   else
-       if(username!="AZERTY" && mot_passe=="ADMIN")
-     {
-       QMessageBox::information(this,"Login","Mot de passe correcte");
-       QMessageBox::warning(this,"Login","Nom d'utilisateur incorrecte");
-   }
-   else
-   if(username=="AZERTY" && mot_passe=="ADMIN")
-   {
-      QMessageBox::information(this,"Login","Nom d'utilisateur et mot de passe correctes");
-
-      ui->stackedwidget->setCurrentIndex(0);
-
-
-    }
-   else
-
-     {
-       QMessageBox::warning(this,"Login","Nom d'utilisateur et mot de passe incorrectes");
-}
-
-
-}
-
-
-void MainWindow::on_pushboutton_ajouter_clicked()
-{
-    int cod_av=ui->lineEdit_3->text().toInt();
-    int H_dep=ui->lineEdit->text().toInt();
-    int H_arr=ui->lineEdit_2->text().toInt();
-    QString type_av=ui->lineEdit_10->text();
-    int num_av=ui->lineEdit_7->text().toInt();
-    QString fct_av=ui->lineEdit_12->text();
-    int num_hang=ui->lineEdit_9->text().toInt();
+    int cod_av=ui->lineEdit_3avion->text().toInt();
+    int H_dep=ui->lineEditavion->text().toInt();
+    int H_arr=ui->lineEdit_2avion->text().toInt();
+    QString type_av=ui->lineEdit_10avion->text();
+    int num_av=ui->lineEdit_7avion->text().toInt();
+    QString fct_av=ui->lineEdit_12avion->text();
+    int num_hang=ui->lineEdit_9avion->text().toInt();
 
     AVION A( cod_av, H_dep, H_arr, type_av, num_av, fct_av, num_hang);
 
-    bool test=A.ajouter();
+    bool test=A.ajouteravion();
     if(test )
     {
-           ui->tableView->setModel(A.afficher());
+           ui->tableViewavion->setModel(A.afficheravion());
 
 
         QMessageBox::information(nullptr, QObject::tr("Ok"),
@@ -126,7 +93,28 @@ void MainWindow::on_pushboutton_ajouter_clicked()
                                "Click Cancel to exit."), QMessageBox::Cancel);
 }
 
-void MainWindow::on_pushButton_supprimer_clicked()
+void MainWindow::on_pushButton_supprimeravion_clicked()
+{
+    AVION A;
+    int cod_av=ui->lineEdit_25avion->text().toInt();
+    bool test=A.supprimeravion(cod_av);
+    if(test)
+    {
+         ui->tableViewavion->setModel(A.afficheravion());
+
+        QMessageBox::information(nullptr, QObject::tr("Ok"),
+        QObject::tr("Suppression effectuée. \n"
+                               "Click Cancel to exit."), QMessageBox::Cancel);
+     }
+    else
+
+        QMessageBox::critical(nullptr, QObject::tr("Not Ok"),
+        QObject::tr("Suppression non effectuée.\n"
+                               "Click Cancel to exit."), QMessageBox::Cancel);
+
+}
+
+/*void MainWindow::on_pushButton_supprimer_clicked()
 {
     AVION A;
     int cod_av=ui->lineEdit_25->text().toInt();
@@ -145,26 +133,26 @@ void MainWindow::on_pushButton_supprimer_clicked()
         QObject::tr("Suppression non effectuée.\n"
                                "Click Cancel to exit."), QMessageBox::Cancel);
 
-}
+}*/
 
 
 
-    void MainWindow::on_pushbutton_modifier1_clicked()
+    void MainWindow::on_pushbutton_modifier1avion_clicked()
     {
-        int cod_av=ui->lineEdit_code2->text().toInt();
-        int H_dep=ui->lineEdit_dep2->text().toInt();
-        int H_arr=ui->lineEdit_arr2->text().toInt();
-        QString type_av=ui->lineEdit_typeavion2->text();
-        int num_av=ui->lineEdit_numavi2->text().toInt();
-        QString fct_av=ui->lineEdit_fct2->text();
-        int num_hang=ui->lineEdit_numhangar2->text().toInt();
+        int cod_av=ui->lineEdit_code2avion->text().toInt();
+        int H_dep=ui->lineEdit_dep2avion->text().toInt();
+        int H_arr=ui->lineEdit_arr2avion->text().toInt();
+        QString type_av=ui->lineEdit_typeavion2avion->text();
+        int num_av=ui->lineEdit_numavi2avion->text().toInt();
+        QString fct_av=ui->lineEdit_fct2avion->text();
+        int num_hang=ui->lineEdit_numhangar2avion->text().toInt();
 
         AVION A( cod_av, H_dep, H_arr, type_av, num_av, fct_av, num_hang);
 
 
-        bool test= A.modifier();
+        bool test= A.modifieravion();
         if(test)
-        { ui->tableView->setModel(A.afficher()) ;        // ui->tableView->setModel(A.afficher());
+        { ui->tableViewavion->setModel(A.afficheravion()) ;        // ui->tableView->setModel(A.afficher());
          // ui->tableView_2->setModel(A.afficher());
 
         QMessageBox::information(nullptr, QObject::tr("Ok"),
@@ -191,7 +179,7 @@ void MainWindow::on_pushButton_quitter_clicked()
     this->close();
 }
 
-void MainWindow::on_pushButton_suivant_mail_clicked()
+void MainWindow::on_pushButton_suivant_mailavion_clicked()
 {
     ui->stackedwidget->setCurrentIndex(1);
 }
@@ -202,7 +190,7 @@ void MainWindow::on_pushButton_suivant_chat_clicked()
 }
 
 
-void MainWindow::on_pushButton_prec_ajout_clicked()
+void MainWindow::on_pushButton_prec_ajoutavion_clicked()
 {
     ui->stackedwidget->setCurrentIndex(0);
 }
@@ -212,20 +200,20 @@ void MainWindow::on_pushButton_prec_mail_clicked()
    ui->stackedwidget->setCurrentIndex(1);
 }
 
-void MainWindow::on_pushButton_ordre_desc_clicked()
+void MainWindow::on_pushButton_ordre_descavion_clicked()
 {
-    ui->tableView_3->setModel(A.tri1());
+    ui->tableView_3avion->setModel(A.tri1avion());
 }
 
-void MainWindow::on_pushButton_ordre_asc_clicked()
+void MainWindow::on_pushButton_ordre_ascavion_clicked()
 {
-    ui->tableView_3->setModel(A.tri2());
+    ui->tableView_3avion->setModel(A.tri2avion());
 }
 
 
-void MainWindow::on_recherchebutton_textChanged(const QString &arg1)
+void MainWindow::on_recherchebuttonavion_textChanged(const QString &arg1)
 {
-    ui->tableView_4->setModel(A.rechercher(arg1));
+    ui->tableView_4avion->setModel(A.rechercheravion(arg1));
 }
 
 void MainWindow::on_pushButton_prec_login_3_clicked()
@@ -233,13 +221,13 @@ void MainWindow::on_pushButton_prec_login_3_clicked()
     ui->stackedwidget->setCurrentIndex(3);
 }
 
-void MainWindow::on_pdf_clicked()
+void MainWindow::on_pdfavion_clicked()
 {
     QString strStream;
                                     QTextStream out(&strStream);
 
-                                    const int rowCount = ui->tableView->model()->rowCount();
-                                    const int columnCount = ui->tableView->model()->columnCount();
+                                    const int rowCount = ui->tableViewavion->model()->rowCount();
+                                    const int columnCount = ui->tableViewavion->model()->columnCount();
 
                                     out <<  "<html>\n"
                                         "<head>\n"
@@ -254,16 +242,16 @@ void MainWindow::on_pdf_clicked()
                                     // headers
                                     out << "<thead><tr bgcolor=#f0f0f0> <th>Numero</th>";
                                     for (int column = 0; column < columnCount; column++)
-                                        if (!ui->tableView->isColumnHidden(column))
-                                            out << QString("<th>%1</th>").arg(ui->tableView->model()->headerData(column, Qt::Horizontal).toString());
+                                        if (!ui->tableViewavion->isColumnHidden(column))
+                                            out << QString("<th>%1</th>").arg(ui->tableViewavion->model()->headerData(column, Qt::Horizontal).toString());
                                     out << "</tr></thead>\n";
 
                                     // data table
                                     for (int row = 0; row < rowCount; row++) {
                                         out << "<tr> <td bkcolor=0>" << row+1 <<"</td>";
                                         for (int column = 0; column < columnCount; column++) {
-                                            if (!ui->tableView->isColumnHidden(column)) {
-                                                QString data = ui->tableView->model()->data(ui->tableView->model()->index(row, column)).toString().simplified();
+                                            if (!ui->tableViewavion->isColumnHidden(column)) {
+                                                QString data = ui->tableViewavion->model()->data(ui->tableViewavion->model()->index(row, column)).toString().simplified();
                                                 out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
                                             }
                                         }
@@ -335,12 +323,12 @@ void MainWindow::on_pushButton_GESTION_AVION_clicked()
 void MainWindow::update_label()
 {
     data=Ar.read_from_arduino();
-ui->label_13->setText("Mouvement non détecté");
+ui->label_13avion->setText("Mouvement non détecté");
     if(data=="1")
 
       {
 
-        ui->label_13->setText("Mouvement détecté !!"); // si les données reçues de arduino via la liaison série sont égales à 1
+        ui->label_13avion->setText("Mouvement détecté !!"); // si les données reçues de arduino via la liaison série sont égales à 1
     // alors afficher Mouvement détecté
 
 
@@ -350,3 +338,6 @@ ui->label_13->setText("Mouvement non détecté");
     //else if (data=="0")
 
 }
+
+
+

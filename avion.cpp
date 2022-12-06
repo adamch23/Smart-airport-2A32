@@ -3,6 +3,7 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QtDebug>
+#include <QtWidgets>
 
 AVION::AVION()
 {
@@ -40,7 +41,7 @@ void AVION::setnum_av(int num_av){ this->num_av=num_av; }
 void AVION::setfct_av(QString fct_av){  this->fct_av=fct_av; }
 void AVION::setnum_hang(int num_hang){ this->num_hang=num_hang; }
 
-bool AVION::ajouter()
+/*bool AVION::ajouter()
 {
 
     QString res=QString::number(cod_av);
@@ -63,17 +64,62 @@ bool AVION::ajouter()
            query.bindValue(5,fct_av);
             query.bindValue(6,ha);
           return query.exec();
-}
-bool AVION::supprimer(int cod_av)
-{
+}*/
+
+bool AVION::ajouteravion()
+{  QSqlQuery query;
+
     QString res=QString::number(cod_av);
-   QSqlQuery query;
-   query.prepare("delete from avion where COD_AV= :cod_av");
-   query.bindValue(":COD_AV", res);
-    return query.exec();
+    QString dep=QString::number(H_dep);
+    QString arr=QString::number(H_arr);
+    QString num=QString::number(num_av);
+    QString ha=QString::number(num_hang);
+
+
+
+
+
+  query.prepare("insert into avion (COD_AV, H_DEP, H_ARR, TYPE_AV , NUM_AV , FCT_AV , NUM_HANG) ""VALUES (:cod_av, : H_dep, :H_arr , :type_av , :num_av , :fct_av, :num_hang )");
+
+           query.bindValue(0, res);
+           query.bindValue(1, dep);
+           query.bindValue(2,arr );
+           query.bindValue(3,type_av);
+           query.bindValue(4,num);
+           query.bindValue(5,fct_av);
+            query.bindValue(6,ha);
+          return query.exec();
 }
 
-QSqlQueryModel * AVION:: afficher()
+bool AVION::supprimeravion(int cod_av)
+{
+    int codavv;
+        QSqlQuery query,query1;
+        QString res=QString::number(cod_av);
+
+        query.prepare("select COD_AV from AVION where COD_AV= :cod_av");
+        query.bindValue(":cod_av", res);
+        query.exec();
+        while(query.next())
+      {
+
+       codavv=query.value(0).toInt();
+       }
+        if (codavv!=cod_av) {  QMessageBox::critical(nullptr, QObject::tr("supp impossible"),
+       QObject::tr("le code avion taper n'existe pas"), QMessageBox::Cancel); }
+        else {
+            query1.prepare("DELETE from AVION where COD_AV= :cod_av");
+            query1.bindValue(":cod_av", cod_av);
+            QMessageBox::information(nullptr, QObject::tr("suppression reussit"),
+               QObject::tr("suppression reussit"), QMessageBox::Cancel);
+
+
+       }
+        return  query1.exec();
+}
+
+
+QSqlQueryModel * AVION::afficheravion()
 {
     QSqlQueryModel * model=new QSqlQueryModel();
     model->setQuery("select * from AVION");
@@ -90,7 +136,7 @@ QSqlQueryModel * AVION:: afficher()
 
 
 
-bool AVION::modifier()
+bool AVION::modifieravion()
 {
 
     QSqlQuery query;
@@ -112,7 +158,20 @@ bool AVION::modifier()
         return query.exec();
 }
 
-QSqlQueryModel * AVION:: tri1()
+/*
+
+        query.prepare ("update avion set COD_AV = :cod_av , H_DEP = :H_dep , H_ARR = :H_arr , TYPE_AV = :type_av , NUM_AV = :num_av , FCT_AV = :fct_av , NUM_HANG = :num_hang  where COD_AV= :cod_av ");
+        query.bindValue(":cod_av",res );
+        query.bindValue(":H_dep",dep);
+        query.bindValue(":H_arr",arr);
+        query.bindValue(":type_av",type_av);
+        query.bindValue(":num_av",num );
+        query.bindValue(":fct_av",fct_av);
+        query.bindValue(":num_hang",ha);
+        return query.exec();
+}*/
+
+QSqlQueryModel * AVION:: tri1avion()
 {
     QSqlQueryModel * model=new QSqlQueryModel();
     model->setQuery("select *from avion order by COD_AV desc");
@@ -127,7 +186,7 @@ QSqlQueryModel * AVION:: tri1()
     return model;
 }
 
-QSqlQueryModel * AVION:: tri2()
+QSqlQueryModel * AVION:: tri2avion()
 {
     QSqlQueryModel * model=new QSqlQueryModel();
     model->setQuery("select *from avion order by COD_AV asc");
@@ -141,7 +200,7 @@ QSqlQueryModel * AVION:: tri2()
 
     return model;
 }
-QSqlQueryModel * AVION::rechercher(QString type_av)
+QSqlQueryModel * AVION::rechercheravion(QString type_av)
 {
 
      QSqlQueryModel *model= new QSqlQueryModel();

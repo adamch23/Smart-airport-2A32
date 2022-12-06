@@ -33,38 +33,38 @@ public:
 
 private slots:
 
-   void on_pushboutton_ajouter_clicked();
+   void on_pushboutton_ajouteravion_clicked();
 
-    void on_pushButton_supprimer_clicked();
-
-
-    void on_pushbutton_modifier1_clicked();
+    void on_pushButton_supprimeravion_clicked();
 
 
+    void on_pushbutton_modifier1avion_clicked();
 
-    void on_pushButton_login_clicked();
+
+
+
 
     void on_pushButton_quitter_clicked();
 
-    void on_pushButton_suivant_mail_clicked();
+    void on_pushButton_suivant_mailavion_clicked();
 
     void on_pushButton_suivant_chat_clicked();
 
-    void on_pushButton_prec_ajout_clicked();
+    void on_pushButton_prec_ajoutavion_clicked();
 
     void on_pushButton_prec_mail_clicked();
 
 
-    void on_pushButton_ordre_desc_clicked();
+    void on_pushButton_ordre_descavion_clicked();
 
-    void on_pushButton_ordre_asc_clicked();
+    void on_pushButton_ordre_ascavion_clicked();
 
 
-    void on_recherchebutton_textChanged(const QString &arg1);
+    void on_recherchebuttonavion_textChanged(const QString &arg1);
 
     void on_pushButton_prec_login_3_clicked();
 
-    void on_pdf_clicked();
+    void on_pdfavion_clicked();
 
     void sendMail();
     void mailSent(QString);
@@ -74,6 +74,10 @@ private slots:
     void on_pushButton_GESTION_AVION_clicked();
 
      void update_label();
+
+     void on_sendBtn_clicked();
+
+     void on_browseBtn_clicked();
 
 private:
     Ui::MainWindow *ui;
